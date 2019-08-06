@@ -1,0 +1,52 @@
+   <div class="benefitIcons">
+       {% for tag in product.tags %}
+      {%unless tag == 'mens' or tag == 'womens' or tag == 'superfoods' or tag=='kids'%}
+        {% assign tag-file = tag | append: ".png" %}
+        <div class="benefitIcon">
+          <img src="{{ tag-file |  file_img_url: '200x200'}}" 
+             onError="style.display = 'none';"
+        >
+          
+          {% case tag %}
+  				{% when 'wellness' %}
+          <p class="benefit_label">Improved Wellness</p>
+  				{% when 'bone' %}
+          <p class="benefit_label">Bone & Joint Health</p>
+
+  				{% when 'hair' %}
+          <p class="benefit_label">Skin & Hair Health</p>
+
+  				{% when 'weight'%}
+          <p class="benefit_label">Weight Loss</p>
+            	{% when 'brain' %}
+          <p class="benefit_label">Brain Health</p>
+
+  				{% when 'heart' %}
+          <p class="benefit_label">Heart Health</p>
+                {% when 'digestion' %}
+          <p class="benefit_label">Better Digestion</p>
+
+  				{% when 'radicals' %}
+          <p class="benefit_label">Fight Free Radicals & Remove Toxins</p>
+            	{% when 'bloating' %}
+          <p class="benefit_label">Less Bloating</p>
+
+  				{% when 'energy' %}
+          <p class="benefit_label">Improved Energy & Focus</p>
+             	{% when 'detox' %}
+          <p class="benefit_label">Detoxification</p>
+
+  				{% when 'cravings' %}
+          <p class="benefit_label">Craving Control</p>
+            	{% when 'blood' %}
+          <p class="benefit_label">Healthy Blood</p>
+
+  				{% when 'immunity' %}
+          <p class="benefit_label">Immunity</p>
+   
+		{% endcase %}
+          
+      </div>
+      {%endunless%}
+    {% endfor %}
+    </div>
